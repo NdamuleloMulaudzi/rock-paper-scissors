@@ -18,3 +18,23 @@ function getHumanChoise(){
 
 let computerScore = 0;
 let humanScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    if((humanChoice =="Rock" && computerChoice=="Scissors") ||
+        (humanChoice=="Paper" && computerChoice=="Rock") ||
+        (humanChoice=="Scissors" && computerChoice=="Paper")){
+            return `You won! ${humanChoice} beats ${computerChoice}`
+            console.log(humanScore++)
+        }
+    else if((computerChoice =="Rock" && humanChoice=="Scissors") ||
+    (computerChoice=="Paper" && humanChoice=="Rock") ||
+    (computerChoice=="Scissors" && humanChoice=="Paper")){
+        return `You Lose! ${computerChoice} beat ${humanChoice}`
+        computerScore++
+    }
+}
+
+let humanSelection = getHumanChoise();
+let computerSelection = getComputerChoice()
+
+console.log(playRound(humanSelection, computerSelection))
